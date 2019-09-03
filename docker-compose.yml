@@ -1,0 +1,16 @@
+#docker file for bittrex
+version: "2"
+services:
+  node:
+    restart: always
+    mem_limit: 100m
+    build:
+      dockerfile: dockerfile
+      context: .
+
+    environment:
+      - NODE_ENV=prod
+
+    ports:
+      - '8081:8081'
+
